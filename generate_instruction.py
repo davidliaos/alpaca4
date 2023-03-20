@@ -159,9 +159,9 @@ def generate_instruction_following_data(
         decoding_args = utils.OpenAIDecodingArguments(
             temperature=temperature,
             n=1,
-            max_tokens=3072,  # hard-code to maximize the length. the requests will be automatically adjusted
+            max_tokens=8000,  # hard-code to maximize the length. the requests will be automatically adjusted
             top_p=top_p,
-            stop=["\n20", "20.", "20."],
+            stop=["\n30", "30.", "30."],
         )
         request_start = time.time()
         results = utils.openai_completion(
